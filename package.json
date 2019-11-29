@@ -1,16 +1,42 @@
 {
   "name": "webiner",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "main.js",
+  "build": {
+    "appId": "com.mien.mien",
+    "productName": "LiveOpsLogAnalyzer",
+    "files": [
+      "**/*",
+      "dist/**/*"
+    ],
+    "directories": {
+      "output": "release",
+      "buildResources": "dist"
+    },
+    "asar": false,
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "runAfterFinish": true,
+      "license": "MIT"
+    }
+  },
   "scripts": {
-    "go": "ng build && electron .",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "install-app-deps",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:electron": "ng build --base-href ./ && electron ."
+    "electron": "electron .",
+    "electron-build": "ng build  --prod --base-href ./ && electron .",
+    "electron-package": "electron-packager . FarmhubCompanyDashboard --platform=win32 --arch=x64"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +68,7 @@
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "electron": "^7.1.2",
+    "electron-builder": "^21.2.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
