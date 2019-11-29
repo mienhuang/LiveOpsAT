@@ -1,0 +1,47 @@
+.fe-log {
+  .files {
+    height: 0;
+    width: 0;
+  }
+  .filter-poster{
+    position: fixed;
+    top: 120px;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 999;
+  }
+  .mat-button {
+    border: 1px solid #999;
+  }
+  .key{
+    margin-left: 20px;
+    &:hover{
+      border-color: red;
+    }
+  }
+  .drop-area {
+    position: fixed;
+    top: 112px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    overflow: auto;
+    &.drop-over {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    .filter {
+      width: 300px;
+      border: none;
+      border-bottom: 2px solid #333;
+      height: 30px;
+      font-size: 17px;
+      padding: 4px;
+      margin-left: 20px;
+    }
+  }
+  #curve_chart,
+  #curve_chart2 {
+    height: 500px;
+  }
+}

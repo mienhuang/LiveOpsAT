@@ -1,0 +1,12 @@
+:host {
+  flex: 1;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  ::ng-deep .mat-tab-header {
+    z-index: 999;
+  }
+}

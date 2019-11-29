@@ -1,0 +1,29 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  .mat-toolbar {
+    background: #1976d2;
+    color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+    fa-icon {
+      cursor: pointer;
+      &:hover{
+          opacity: .8;
+      }
+    }
+  }
+  .dashboard-inner {
+    flex: 1;
+    display: flex;
+  }
+  .mat-toolbar-row{
+    display: flex;
+    justify-content: space-between;
+    span{
+      font-size: 12px;
+    }
+  }
+}

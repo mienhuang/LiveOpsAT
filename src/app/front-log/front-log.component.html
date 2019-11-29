@@ -1,0 +1,18 @@
+<div class="fe-log">
+    <div class="drop-area" [ngClass]="{'drop-over': dropOver}" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+        <div class="filter-poster">
+            <button mat-button (click)="triggerFileSelect()">Choose File</button>
+            <input class="files" #file type="file" title="''" (change)="handleFileInput($event)">
+            <ng-container *ngIf="showFilter">
+                <input class="filter" placeholder="Filter Key Words" [(ngModel)]="keyWords">
+                <button mat-button (click)="addFilterKey()">Add Filter</button>
+                <button mat-button (click)="removeKeys(i)" class="key" *ngFor="let key of filterKeys; let i = index;"
+                    title="click to remove">{{key}}</button>
+            </ng-container>
+        </div>
+        <div *ngIf="hasFile">
+            <div id="curve_chart"></div>
+            <div id="curve_chart2"></div>
+        </div>
+    </div>
+</div>
