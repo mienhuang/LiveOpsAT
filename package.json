@@ -27,7 +27,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "pack": "electron-builder --dir",
+    "pack": "ng build  --prod --base-href ./ && electron-builder",
     "dist": "electron-builder",
     "postinstall": "install-app-deps",
     "build": "ng build --prod",
